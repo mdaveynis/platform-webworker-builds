@@ -1340,6 +1340,9 @@
                 case 'show':
                     serializedEvent = serializeMouseEvent(event);
                     break;
+                case 'wheel':
+                    serializedEvent = { layerX: event.layerX, layerY: event.layerY, deltaY: event.deltaY };
+                    break;
                 case 'keydown':
                 case 'keypress':
                 case 'keyup':
@@ -1398,6 +1401,7 @@
                 case 'visibilitychange':
                 case 'volumechange':
                 case 'waiting':
+                case 'focus':
                     serializedEvent = serializeGenericEvent(event);
                     break;
                 case 'transitionend':

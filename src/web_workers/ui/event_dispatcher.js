@@ -40,6 +40,9 @@ export var EventDispatcher = (function () {
             case 'show':
                 serializedEvent = serializeMouseEvent(event);
                 break;
+            case 'wheel':
+                serializedEvent = { layerX: event.layerX, layerY: event.layerY, deltaY: event.deltaY };
+                break;
             case 'keydown':
             case 'keypress':
             case 'keyup':
@@ -98,6 +101,7 @@ export var EventDispatcher = (function () {
             case 'visibilitychange':
             case 'volumechange':
             case 'waiting':
+            case 'focus':
                 serializedEvent = serializeGenericEvent(event);
                 break;
             case 'transitionend':
