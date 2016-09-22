@@ -13,6 +13,17 @@ export var EventDispatcher = (function () {
         this._serializer = _serializer;
     }
     EventDispatcher.prototype.dispatchRenderEvent = function (element, eventTarget, eventName, event) {
+        if(event instanceof CustomEvent){
+            this._sink.emit({
+                'element': this._serializer.serialize(element, RenderStoreObject),
+                'eventName': eventName,
+                'eventTarget': eventTarget,
+                'event': { detail: event.detail }
+            });
+
+            return false;
+        }
+
         var serializedEvent;
         // TODO (jteplitz602): support custom events #3350
         switch (event.type) {
