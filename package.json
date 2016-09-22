@@ -8,8 +8,8 @@
   "author": "angular",
   "license": "MIT",
   "peerDependencies": {
-    "@angular/core": "0.0.0-PLACEHOLDER",
-    "@angular/platform-browser": "0.0.0-PLACEHOLDER"
+    "@angular/core": "2.0.0",
+    "@angular/platform-browser": "2.0.0"
   },
   "repository": {
     "type": "git",
