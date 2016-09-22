@@ -1295,6 +1295,9 @@
             if (isPresent(target.files)) {
                 serializedEvent['target']['files'] = target.files;
             }
+            if (isPresent(target.checked)) {
+                serializedEvent['target']['checked'] = target.checked;
+            }
         }
         return serializedEvent;
     }
